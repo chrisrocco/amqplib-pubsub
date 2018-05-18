@@ -1,0 +1,35 @@
+{
+  "name": "amqplib-pubsub",
+  "version": "1.0.0",
+  "description": "Removes the ceremony involved in using amqplib by providing a dead-simple pubsub wrapper",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "concurrently -k -p '[{name}]' -n 'TypeScript,Node' -c 'yellow.bold,cyan.bold,green.bold' 'npm run watch-ts' 'npm run watch-node'",
+    "watch-ts": "tsc -w",
+    "watch-node": "nodemon dist/index.js",
+    "test": "jest --forceExit --coverage --verbose",
+    "demo": "ts-node demos/basic.ts"
+  },
+  "keywords": [
+    "amqplib",
+    "wrapper",
+    "PubSub"
+  ],
+  "author": "Chris Rocco",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "rxjs": "^5.5.10"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^10.1.0",
+    "amqplib": "^0.5.2",
+    "concurrently": "^3.5.1",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.4",
+    "ts-jest": "^22.4.6",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
+  }
+}
